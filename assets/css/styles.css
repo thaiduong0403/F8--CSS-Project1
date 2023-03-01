@@ -1,0 +1,716 @@
+* {
+    /* Dung de khong phai chinh size nhieu */
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0f1b4c;
+    --pText-color: #5A6473;
+    --fontSize-s: 1.4rem;
+    --fontSize-m: 1.6rem;
+    --fontSize-l: 1.8rem;
+    --fontSize-xl: 2rem;
+    --icon-fontSize: 2.5rem;
+}
+
+html {
+    /* dung de set 1 rem = 10px*/
+    font-size: 62.5%;
+
+}
+
+body {
+    /* tang kich thuoc mac dinh cua font chu len 16px */
+    font-size: var(--fontSize-m);
+    /* can le trang  https://transfonter.org/ de convert font to webfile*/
+    /* them font sans-serif de du phong loi mat font */
+    font-family: "Poppins", sans-serif;
+}
+
+/* <!---- Common ----> */
+
+/* <!-- Link --> */
+a {
+    text-decoration: none;
+}
+
+/* <!-- Content --> */
+.content {
+    /* khi do rong nho hon 1110px thi trinh duyet se dung max-with */
+    width: 1110px;
+    max-width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* <!-- Button --> */
+.btn {
+    --btn-height: 5rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: calc((var(--btn-height) - var(--fontSize-s)) /2) 1.6rem;
+    min-width: 9.8rem;
+
+    background: var(--primary-color);
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: var(--fontSize-s);
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+
+/* <!-- 1.Header --> */
+.header {
+    background: #E6F0FF;
+    /* dung height = 100vh de lap day trang thay vi chi 736 px */
+    height: 100vh;
+    /* height: 736px; */
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    /* Nen dung padding-top thay vi margin-top neu khong se tao ra khoang trang */
+    /* margin-top: 3.8rem; */
+    padding-top: 3.8rem;
+}
+
+/* <!-- 1.2 Navigation for PC--> */
+.navbar-pc>ul {
+    --navbar-padding-LR: 1.5rem;
+
+    display: flex;
+    margin-left: calc(6.5rem - var(--navbar-padding-LR));
+}
+
+.navbar-pc>ul a {
+    color: #4F5361;
+    font-weight: 500;
+    font-size: var(--fontSize-s);
+    /* tao padding co trai va phai = 1 nua khoang cach cua 2 the; tren duoi 8px cho de bam */
+    padding: 0.8rem var(--navbar-padding-LR);
+    /* line-height co 1 hang nen khong can */
+    /* line-height: 2.1rem; */
+}
+
+.navbar-pc>ul a:hover {
+    text-decoration: underline;
+}
+
+/* <!-- 1.3 Action --> */
+.navbar .action {
+    margin-left: auto;
+}
+
+.navbar .action ul {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .action-link {
+    font-weight: 500;
+    font-size: var(--fontSize-s);
+    color: var(--primary-color);
+}
+
+.btn.action-btn {
+    --btn-height: 4rem;
+
+    padding: calc((var(--btn-height) - var(--fontSize-s)) /2) 1.6rem;
+    margin-left: 1.8rem;
+    border-radius: 8px;
+}
+
+/* <!-- 2.Hero --> */
+.hero {
+    margin-top: 130px;
+    padding-left: 8px;
+    padding-right: 8px;
+    position: relative;
+}
+
+.hero .info {
+    width: calc(554 / 1110 * 100%)
+        /* width: 54%; */
+}
+
+.hero .sub-title {
+    font-size: var(--fontSize-l);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    color: #687690;
+}
+
+.hero .title {
+    font-weight: 700;
+    font-size: 6rem;
+    line-height: calc(7.6/6.6);
+    color: #000336;
+    margin-top: 8px;
+}
+
+.hero .desc {
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: var(--fontSize-l);
+    line-height: 178%;
+    /* text-transform: capitalize; */
+    color: #5A6473;
+}
+
+.btn.hero-cta {
+    margin-top: 40px;
+    min-width: 170px;
+}
+
+.hero-img {
+    position: absolute;
+    right: calc((100vw -1110px)/2);
+    right: 0px;
+    top: 0;
+
+}
+
+/* 2.Client */
+.client {
+    margin-top: 79px;
+    /* background-color: chocolate; */
+    padding: 43px 0 64px;
+}
+
+.client .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row>p {
+    font-weight: 500;
+    font-size: var(--fontSize-m);
+    line-height: 20px;
+    color: #7D8589;
+    margin-top: 23px;
+}
+
+/* Images */
+.images {
+    margin-top: 96px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 3.Guides */
+.guides {
+    margin-top: 40px;
+    padding: 93px 0 79px;
+    /* background-color: aqua; */
+}
+
+.guides h2 {
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 1em;
+    /* or 100% */
+
+    text-align: center;
+    position: relative;
+    color: var(--primary-color);
+}
+
+.guides h2::before {
+    /* luc nao cung can co the content khi dung before va after */
+    content: "";
+    display: inline-block;
+    width: 41px;
+    height: 4px;
+    border-radius: 12px;
+    position: absolute;
+    background: var(--primary-color);
+    top: -10px;
+    /* left thi chi chay so voi the cha, con transform la so voi chinh no */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.guides p {
+    font-weight: 400;
+    font-size: var(--fontSize-m);
+    line-height: 30px;
+    text-align: center;
+    color: var(--pText-color);
+    /* muon the block canh giua thi dung margin left va right=auto */
+    margin: 20px auto 0;
+
+    /* muon khong hien thanh cuon ngang thi set max-width =100% */
+    width: 459px;
+    max-width: 100%;
+}
+
+/* List guide */
+
+.list-guide {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.guide-item {
+    margin: 0 70px 0px;
+    text-align: center;
+}
+
+.guide-item .title {
+    margin-top: 26px;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.1;
+    color: var(--pText-color);
+}
+
+.guide-item .link {
+    display: inline-block;
+    font-weight: 600;
+    font-size: var(--fontSize-s);
+    line-height: 1.5;
+    color: #0689FF;
+}
+
+.guide-item .arrow {
+    margin-left: 6px;
+}
+
+.guide-cts {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.guide-cts .btn {
+    min-width: 170px;
+}
+
+/* 4.Features */
+.featured {
+    margin-top: 41px;
+    background: #F5FAFE;
+    padding: 110px 0 110px;
+}
+
+.featured .sub-title {
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: #000339;
+}
+
+.featured .row {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 15px;
+}
+
+.row .desc {
+    font-weight: 400;
+    font-size: var(--fontSize-m);
+    line-height: 1.875;
+    color: #5A6473;
+
+}
+
+.row .link {
+    font-weight: 600;
+    font-size: var(--fontSize-l);
+    color: #0689FF;
+
+}
+
+/* List */
+.featured .list {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.featured .list {
+    flex: 1;
+    gap: 30px;
+}
+
+.featured .list .thumb {
+    width: 100%;
+    height: 227px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.list .item {
+    background-color: #FFFFFF;
+}
+
+.list .body {
+    padding: 17px 20px 24px;
+}
+
+.list .body .title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000339;
+
+}
+
+.list .body .desc {
+    font-weight: 500;
+    margin-top: 11px;
+    font-size: var(--fontSize-l);
+    line-height: 1.5;
+    color: #A3A6AB;
+}
+
+.list .body .info {
+    display: flex;
+}
+
+
+.list .body .info .label {
+    font-weight: 500;
+    font-size: var(--fontSize-s);
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: #444444;
+    margin-left: 8px;
+
+}
+
+
+.list .body .info .icon:not(:first-child) {
+    margin-left: 23px;
+}
+
+/* <!-- 5.Stats --> */
+
+
+.stats {
+    margin-top: 75px;
+    padding: 50px 0;
+}
+
+.stats .content {
+    width: 1048px;
+}
+
+.stats .content .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats .content .row .img-block {
+    width: 50%;
+    position: relative;
+}
+
+.stats .content .row .img-block>img {
+    height: 460px;
+    width: 400px;
+    border-radius: 12px;
+    object-fit: cover;
+
+    /* de canh hinh sat sang trai thi dung nhu sau */
+    display: block;
+    margin-left: auto;
+}
+
+/* trend */
+
+.stats .content .row .img-block .stats-trend {
+    position: absolute;
+    padding: 45px 22.89px 40.5px 21.28px;
+    top: 0;
+    left: 0;
+    background: #FFFFFF;
+    width: 239px;
+    height: 252px;
+    box-shadow: 90px 85px 100px rgba(0, 0, 0, 0.06);
+    border-radius: 0px 0px 12px 12px;
+}
+
+
+.stats .content .row .img-block .stats-trend .row {}
+
+.stats .content .row .img-block .stats-trend .row .value {
+    font-weight: 700;
+    font-size: 2.6rem;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: #000339;
+}
+
+.stats .content .row .img-block .stats-trend .row .icon {
+    width: 25.11px;
+    height: 16.03px;
+    object-fit: cover
+}
+
+.stats .content .row .img-block .stats-trend .desc {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #A7A7A7;
+    margin-top: 8px;
+}
+
+.stats .content .row .img-block .separate {
+    height: 1.2px;
+    background: #E9E9E9;
+    margin-top: 25.51px;
+}
+
+/* avatar */
+.avatar-block {
+    margin-top: 25.79px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 16px
+}
+
+.avatar-block .avatar-group {
+    display: flex;
+}
+
+/* .avatar-block .avatar-group:first-child {
+    margin-left: 0;
+} */
+
+.avatar-block .avatar-group .avatar {
+    width: 16.34px;
+    height: 16.34px;
+    object-fit: cover;
+    filter: drop-shadow(4px 4px 16px rgba(0, 0, 0, 0.1));
+    border-radius: 50%;
+    margin-left: -3px;
+    text-align: center;
+    font-weight: 450;
+    font-size: 0.7rem;
+    color: #FFFFFF;
+    line-height: 16px;
+    background: var(--colorIcon, blue);
+}
+
+.avatar-block .avatar-group .avatar:first-child {
+    margin-left: 0;
+}
+
+/* Info */
+
+.stats .content .row .info {
+    width: 50%;
+    padding-top: 79px;
+    padding-left: 165px;
+    /* width: 269px; */
+    /* margin-right: calc(290px - ((1440px - 1048px) / 2)); */
+}
+
+.stats .content .row .info .sub-title {
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 1.3;
+    color: #000339;
+    position: relative;
+}
+
+.stats .content .info .sub-title::before {
+    content: "";
+    width: 41px;
+    height: 4px;
+    background: #000339;
+    border-radius: 12px;
+    display: inline-block;
+    position: absolute;
+    top: -10px;
+}
+
+.stats .content .info .desc {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: var(--fontSize-m);
+    line-height: 1.875;
+    color: #5A6473;
+
+}
+
+/* QTY Items */
+.stats .content .row:nth-child(2) {
+    margin-top: 110px;
+    padding: 0 32px;
+}
+
+.stats .content .row:nth-child(2) .qty-item {}
+
+.stats .content .row:nth-child(2) .qty-item .qty {
+    font-weight: 600;
+    font-size: 6.4rem;
+    line-height: 1;
+    color: #000000;
+}
+
+.stats .content .row:nth-child(2) .qty-item .qty-desc {
+    font-weight: 500;
+    font-size: var(--fontSize-l);
+    line-height: 1.5;
+    color: #7B8087;
+    margin-top: 22px;
+}
+
+/* -----------------------MOBILE-------------------------- */
+
+/* <!-- 1.2a Nav MB --> */
+.navbar-mb-icon {
+    font-size: var(--icon-fontSize);
+    color: var(--primary-color);
+    display: none;
+    position: fixed;
+    right: 1rem;
+
+}
+
+.navbar-mb-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: none;
+    animation: fadeIn linear 0.5s;
+}
+
+.navbar-mb {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    max-width: 100%;
+    background-color: white;
+    /* display: none; */
+    /* dung thuoc tinh transform de day thanh nav ra khoi man hinh roi moi truot vao */
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all linear 0.5s;
+}
+
+.navbar-mb>ul {
+    margin-top: 2rem;
+}
+
+.navbar-mb>ul li a {
+    /* de tao duoc padding thi display xai block */
+    display: block;
+    padding: 2rem;
+    font-size: var(--fontSize-m);
+    color: #4F5361;
+    font-weight: 500;
+}
+
+.navbar-mb_close {
+    font-size: var(--icon-fontSize);
+    color: var(--primary-color);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+/* <!-- 1.3A Action Mobile --> */
+.action-mb-icon {
+    font-size: var(--icon-fontSize);
+    color: var(--primary-color);
+    display: none;
+    position: fixed;
+    right: 5rem;
+
+}
+
+.action-mb {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    max-width: 100%;
+    background-color: white;
+    /* display: none; */
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all linear 0.5s;
+}
+
+.action-mb>ul {
+    margin-top: 2rem;
+}
+
+.action-mb>ul li a {
+    display: block;
+    padding: 2rem;
+    font-size: var(--fontSize-m);
+    color: #4F5361;
+    font-weight: 500;
+}
+
+.action-mb_close {
+    font-size: var(--icon-fontSize);
+    color: var(--primary-color);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+/* Javascript class */
+.Open {
+    display: block !important;
+    transform: translateX(0%) !important;
+    opacity: 1 !important;
+}
+
+.Close {
+    display: none !important;
+    transform: translateX(100%) !important;
+    opacity: 0 !important;
+}
+
+@media (max-width: 799px) {
+
+    /* <!-- 1.2A Navigation Mobile --> */
+    .navbar-mb-icon {
+        display: block;
+    }
+
+    .navbar-pc {
+        display: none;
+    }
+
+    /* <!-- 1.3A Action Mobile --> */
+    .action {
+        display: none;
+    }
+
+    .action-mb-icon {
+        display: block;
+    }
+}

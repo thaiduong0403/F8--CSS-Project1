@@ -1,0 +1,7 @@
+{
+    "editor.defaultFormatter": "<another formatter>",
+    "editor.formatOnSave": true,
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    }
+}
